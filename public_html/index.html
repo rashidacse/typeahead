@@ -6,18 +6,19 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Global Search</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/custom_plugin.js"></script>
+        <link rel="stylesheet" type="text/css" href="../public_html/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../public_html/css/custom.css"/>
+        <script type="text/javascript" src="../public_html/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../public_html/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../public_html/js/custom_plugin.js"></script>
     </head>
     <body>
         <script type="text/javascript">
-            $(function() {
-                
+            $(function () {
+
 //                var rabbit = {};
 //                rabbit.run = function(){
 //                    console.log("Rabbit is running.");
@@ -32,7 +33,7 @@ and open the template in the editor.
 //                rabbit.run();
 //                rabbit.eat();
 //                rabbit.sleep();
-                
+
 //                function Rabbit(){
 //                    Rabbit.prototype.run = function(){
 //                        console.log("Rabbit is running.");
@@ -53,41 +54,41 @@ and open the template in the editor.
 //                rabbit.sleep();
 //                
                 var Rabbit = {
-                    run:function(){
+                    run: function () {
                         console.log("Rabbit is running.");
                     },
-                    walk:function(){
+                    walk: function () {
                         console.log("Rabit is walking.");
                     }
                 };
-                
+
                 Rabbit.run();
                 Rabbit.walk();
-                
+
 //                setTimeout(function(){console.log("start");}, 5000);
                 $("#xyz").typeahead({color: "green"}).append("jfklsdjflksdf");
                 $("#abc").typeahead({color: "red"});
                 $("#ghi").typeahead();
 
-                var typingTimer;               
-                var doneTypingInterval = 1000;  
+                var typingTimer;
+                var doneTypingInterval = 1000;
 
-                $('#typeahead').keyup(function() {
+                $('#typeahead').keyup(function () {
                     var inputvalue = $("#typeahead").val();
                     clearInterval(typingTimer);
 //                    typingTimer =  setInterval(doneTyping(inputvalue), doneTypingInterval);
-                    setTimeout(function(){
-                        
+                    setTimeout(function () {
+
 //                        console.log(inputvalue);
                         xyz();
                     }, doneTypingInterval);
-                    
-                    function xyz(){
+
+                    function xyz() {
                         console.log("dfdsf");
                     }
                 });
-               
-                
+
+
 
                 function setAjaxfunction(inputvalue) {
                     alert(inputvalue);
@@ -96,7 +97,7 @@ and open the template in the editor.
                         type: "POST",
                         url: '<?php echo base_url(); ?>',
                         data: inputvalue,
-                        success: function(data) {
+                        success: function (data) {
                             console.log(data);
                         }
                     });
@@ -117,12 +118,338 @@ and open the template in the editor.
             });
 
         </script>
-        <div id="xyz"></div><br/>
-        <div id="abc"></div><br/>
-        <div id="def"></div><br/>
-        <div id="ghi"></div>
-        <div><span>Enter Your Word:</span> 
-            <input type ="text" name="name" id="typeahead" data-provide ="typeahead" >
+        <!--        <div id="xyz"></div><br/>
+                <div id="abc"></div><br/>
+                <div id="def"></div><br/>
+                <div id="ghi"></div>-->
+        <div class="container">
+            <div class="row padding_over_row form-group">
+                <div class="col-md-2">
+                    <span>Search Your Word:</span> 
+                </div>
+                <div class="col-md-3">
+                    <input class="form-control" placeholder="Search People, Pages & Blogs" type ="text" name="name" id="typeahead" data-provide ="typeahead" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="pagelet">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <span class="pagelet_title">People</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img src="../public_html/img/face.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Alamgir Kabir
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Bangladesh
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img src="../public_html/img/face.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Nazmul Hasan
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Bangladesh
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img src="../public_html/img/face.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Nazrul Islam
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Bangladesh
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img src="../public_html/img/face.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Barak Obama
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                USA
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img src="../public_html/img/face.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Abdullah
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Oman
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <div style="font-weight: bold;">
+                                            <a href="">See All</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <span class="pagelet_title">Pages</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/page/01.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Nature
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Health 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/page/02.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                I LOVE ALLAH
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Public
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/page/03.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                ISLAM : The Best Way of Life
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Public
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/page/04.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Success or Failure
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Community
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/page/05.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Prayer for Life
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Common Interest
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <div style="font-weight: bold;">
+                                            <a href="">See All</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <span class="pagelet_title">Blogs</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/blog/01.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Wealth
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                by Mohammad Azhar Uddin
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/blog/02.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                I LOVE ALLAH
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Public
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/blog/03.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                ISLAM : The Best Way of Life
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Public
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/blog/04.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Success or Failure
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Community
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagelet_divider"></div>
+                                <div class="row form-group">
+                                    <div class="col-md-3">
+                                        <img class="img-circle" src="../public_html/img/blog/05.jpg">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Prayer for Life
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Common Interest
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <div style="font-weight: bold;">
+                                            <a href="">See All</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
